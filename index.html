@@ -1,0 +1,294 @@
+# ptech-web-studio
+PTech Web Studio official website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PTech Web Studio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #0d0d0d;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid red;
+    }
+
+    header h1 {
+      color: red;
+      font-size: 2.5rem;
+    }
+
+    /* Logo Animation */
+    /* Logo animation */
+    .logo {
+  width: 150px;
+  height: auto;
+  animation: fadeInLogo 1s ease-in;
+  display: inline-block;
+  margin: 0 20px 0 0;
+  vertical-align: middle;
+}
+
+    @keyframes fadeInLogo {
+     0% {
+     opacity: 0;
+     transform: scale(0.5);
+    }
+    100% {
+     opacity: 1;
+     transform: scale(1);
+   }
+    }
+
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #111;
+      padding: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: red;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .hero {
+      text-align: center;
+    }
+
+    .hero h2 {
+      color: white;
+      font-size: 2rem;
+    }
+
+    .services ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .services li {
+      padding: 10px;
+      border-bottom: 1px solid #333;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+      background: #222;
+      color: white;
+      border: 1px solid #444;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      padding: 10px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #ff1a1a;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+    
+    /* === NEW SECTIONS STYLES === */
+#about, #why-us, #testimonials {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+#why-us ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#why-us li {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+}
+
+/* === SMOOTH SCROLL ANIMATION === */
+section.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+section.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero h2 {
+   color: white;
+   font-size: 2rem;
+   animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+   
+
+  </style>
+</head>
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+
+  document.querySelectorAll('section').forEach(section => {
+    section.classList.add('fade-in');
+    observer.observe(section);
+  });
+
+
+
+</script>
+
+<body>
+
+  <header>
+    <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap;">
+      <img src="logo.png" alt="PTech Web Studio Logo" class="logo" />
+      <h1>PTech Web Studio</h1>
+    </div>
+  </header>
+  
+  
+    <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <h2>We Build Modern, Stunning, Fast Websites</h2>
+    <p>Specializing in Web Design, Development, SEO & Support</p>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>✅ Website Design (UI/UX)</li>
+      <li>✅ Frontend Development (HTML, CSS, JS, React)</li>
+      <li>✅ Backend Development (Node.js, PHP, Python/Django)</li>
+      <li>✅ WordPress Development</li>
+      <li>✅ E-commerce Websites</li>
+      <li>✅ SEO Optimization</li>
+      <li>✅ Maintenance & Support</li>
+    </ul>
+  </section> 
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      At PTech Web Studio, we are passionate about crafting stunning, fast, and secure websites. Our team is dedicated to making your brand shine online.
+    </p>
+  </section>
+  
+  <section id="why-us">
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>🚀 Fast & Responsive Design</li>
+      <li>🎨 Creative & Modern UI</li>
+      <li>🔧 Full Stack Expertise</li>
+      <li>📞 Dedicated Support</li>
+    </ul>
+  </section>
+  
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <blockquote>
+      "PTech Web Studio elevated our business online! Very professional and timely."  
+      <footer>— vikesh pandey, Business Owner</footer>
+    </blockquote>
+  </section>
+  
+  
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form" name="contact" method="POST" data-netlify="true">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 PTech Web Studio. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
